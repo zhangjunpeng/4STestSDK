@@ -11,7 +11,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/title" />
+        android:src="@drawable/title_4s" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/login_bg"
+        android:background="@drawable/login_bg_4s"
         android:orientation="horizontal" >
 
         <TextView
@@ -51,7 +51,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/login_bg"
+        android:background="@drawable/login_bg_4s"
         android:orientation="horizontal" >
 
         <TextView
@@ -84,7 +84,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="15dp"
-        android:background="@drawable/button_bg"
+        android:background="@drawable/button_bg_4s"
         android:orientation="horizontal" >
 
         <TextView

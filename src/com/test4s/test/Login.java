@@ -10,7 +10,7 @@ import com.test4s.tools.GameHttpConnection;
 public class Login {
 	private Handler handler;
 	private int tag;
-	private final static String login_url = "http://4stest.com/sdkuser/sdklogin";
+	private final static String login_url = "http://www.4stest.com/sdkuser/sdklogin";
 	public static String uid = "";
 	public static String sid = "";
 	// 是否登录

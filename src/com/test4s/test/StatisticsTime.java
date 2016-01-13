@@ -13,9 +13,11 @@ import com.test4s.tools.GameHttpConnection;
 
 public class StatisticsTime {
 
-	private static final String url = "http://4stest.com/sdkuser/logintime";
+	private static final String url = "http://www.4stest.com/sdkuser/logintime";
 
 	public static void send(final String startTime, final String endTime) {
+
+		MyLog.i("发送时间返");
 		Executors.newSingleThreadExecutor().execute(new Runnable() {
 
 			@Override

@@ -101,26 +101,24 @@ public class GameHttpConnection {
 			printWriter.flush();
 			// out.close();
 
-			if (uRLConnection != null && uRLConnection.getResponseCode() != 200) {
-				MyLog.i("发送失败");
+			if (uRLConnection == null || uRLConnection.getResponseCode() != 200) {
+				MyLog.i("服务器连接失败");
 				return "服务器连接失败";
-			} else {
-				// 在getInputStream()函数调用的时候，就会把准备好的http请求
-				// 正式发送到服务器了，然后返回一个输入流，用于读取服务器对于此次http请求的返回信息。
-				InputStream is = uRLConnection.getInputStream();
-				BufferedReader br = new BufferedReader(
-						new InputStreamReader(is));
-				String response = "";
-				String readLine = null;
-				while ((readLine = br.readLine()) != null) {
-					// response = br.readLine();
-					response = response + readLine;
-				}
-				is.close();
-				br.close();
-				uRLConnection.disconnect();
-				return response;
 			}
+			// 在getInputStream()函数调用的时候，就会把准备好的http请求
+			// 正式发送到服务器了，然后返回一个输入流，用于读取服务器对于此次http请求的返回信息。
+			InputStream is = uRLConnection.getInputStream();
+			BufferedReader br = new BufferedReader(new InputStreamReader(is));
+			String response = "";
+			String readLine = null;
+			while ((readLine = br.readLine()) != null) {
+				// response = br.readLine();
+				response = response + readLine;
+			}
+			is.close();
+			br.close();
+			uRLConnection.disconnect();
+			return response;
 
 		} catch (MalformedURLException e) {
 			e.printStackTrace();

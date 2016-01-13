@@ -22,7 +22,7 @@ import com.test4s.tools.StateListener;
 
 public class GameSDK {
 
-	public final static String loginUrl = "http://4stest.com/sdkuser/sdklogin";
+	public final static String loginUrl = "http://www.4stest.com/sdkuser/sdklogin";
 	public static boolean isDebug = true;
 
 	public static String key = "";
@@ -43,7 +43,7 @@ public class GameSDK {
 	static TreeMap<String, String> header;
 
 	// 获取加密key
-	static final String url_getkey = "http://4stest.com/sdkuser/getkey";
+	static final String url_getkey = "http://www.4stest.com/sdkuser/getkey";
 	static Handler handler_getkey = new Handler() {
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -127,8 +127,15 @@ public class GameSDK {
 	public static void login(Context context, GameCallback gameCallback) {
 
 		myGameCallback = gameCallback;
+		Activity activity = (Activity) context;
 		Intent intent = new Intent(context, LoginActivity.class);
-		context.startActivity(intent);
+		activity.startActivity(intent);
+		// Dialog loginDialog = new Dialog(context);
+		// loginDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		// loginDialog.setContentView(ResourceUtil.getLayoutId(GameSDK.mContext,
+		// "activity_sdk_main_4s"));
+		//
+		// loginDialog.show();
 
 	}
 
